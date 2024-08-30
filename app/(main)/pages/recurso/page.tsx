@@ -9,7 +9,7 @@ import { InputText } from 'primereact/inputtext';
 import { Toast } from 'primereact/toast';
 import { Toolbar } from 'primereact/toolbar';
 import { classNames } from 'primereact/utils';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Projeto } from '@/types';
 import { RecursoService } from '@/service/RecursoService';
 
@@ -30,7 +30,7 @@ const Recurso = () => {
     const [globalFilter, setGlobalFilter] = useState('');
     const toast = useRef<Toast>(null);
     const dt = useRef<DataTable<any>>(null);
-    const recursoService = new RecursoService();
+    const recursoService = useMemo(() => new RecursoService(), []);
 
     useEffect(() => {
         if (!recursos) {
