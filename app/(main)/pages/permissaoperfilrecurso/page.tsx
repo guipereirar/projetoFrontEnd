@@ -275,7 +275,7 @@ const PermissaoPerfilRecurso = () => {
         return (
             <>
                 <span className="p-column-title">Perfil</span>
-                {rowData.id}
+                {rowData.perfil.descricao}
             </>
         );
     };
@@ -284,7 +284,7 @@ const PermissaoPerfilRecurso = () => {
         return (
             <>
                 <span className="p-column-title">Recurso</span>
-                {rowData.id}
+                {rowData.recurso.nome}
             </>
         );
     };
